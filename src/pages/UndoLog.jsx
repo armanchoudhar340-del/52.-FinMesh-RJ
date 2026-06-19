@@ -49,11 +49,11 @@ export default function UndoLog() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-3xl font-display font-black text-white tracking-tight">Transaction Orchestrator</h2>
-          <p className="text-slate-500 font-medium mt-1 uppercase text-[10px] tracking-[0.2em]">Atomic LIFO State Management</p>
+          <p className="text-slate-500 font-medium mt-1 uppercase text-[10px] tracking-[0.2em]">React useState / useReducer State History</p>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex flex-col items-end">
-            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Stack Integrity</span>
+            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Hook Integrity</span>
             <span className="text-xs font-bold text-emerald-400">VERIFIED</span>
           </div>
           <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -132,13 +132,13 @@ export default function UndoLog() {
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Quantum</label>
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Quantity</label>
                   <input type="number" step="any" min="0.0001" value={amount} onChange={e => setAmount(e.target.value)} className="fin-input w-full font-mono font-bold" />
                 </div>
               </div>
 
               <button type="submit" className="fin-btn fin-btn-primary w-full py-4 text-xs font-black uppercase tracking-[0.2em]">
-                Execute Block Push
+                Dispatch State Action
               </button>
             </form>
           </div>
@@ -150,10 +150,10 @@ export default function UndoLog() {
               className="fin-btn w-full py-4 bg-rose-500/10 border-rose-500/30 text-rose-500 hover:bg-rose-500/20 disabled:opacity-30 disabled:hover:bg-rose-500/10 text-xs font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all"
             >
               <RotateCcw className="w-4 h-4" />
-              Atomic POP (Undo)
+              Undo (useReducer POP)
             </button>
             <p className="text-[9px] text-slate-600 text-center font-bold uppercase tracking-widest mt-4">
-              Pops Head Element & Reverts Balances
+              Reverts Last useState Dispatch
             </p>
           </div>
         </div>
@@ -167,8 +167,8 @@ export default function UndoLog() {
                   <Layers className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white">LIFO Stack</h3>
-                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5 font-mono">0xSTACK_MEM</p>
+                  <h3 className="text-base font-bold text-white">useState History</h3>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5 font-mono">useHistoryReducer()</p>
                 </div>
               </div>
               <span className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-[10px] font-black text-indigo-400 uppercase tracking-widest">
@@ -197,7 +197,7 @@ export default function UndoLog() {
                       >
                         {isTop && (
                           <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-amber-500 text-[8px] font-black text-black uppercase tracking-widest shadow-lg">
-                            Stack Top
+                            Current Hook
                           </div>
                         )}
                         <div className="flex items-center justify-between">
@@ -225,7 +225,7 @@ export default function UndoLog() {
                 ) : (
                   <div className="flex flex-col items-center justify-center py-20 text-slate-700 opacity-40">
                     <Database className="w-12 h-12 mb-4" />
-                    <p className="text-[10px] font-black uppercase tracking-[0.3em]">Stack Null State</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.3em]">No State History</p>
                   </div>
                 )}
               </AnimatePresence>
@@ -233,7 +233,7 @@ export default function UndoLog() {
 
             <div className="mt-8 pt-6 border-t border-white/5 text-center">
               <span className="text-[9px] font-black text-slate-700 uppercase tracking-[0.4em] flex items-center justify-center gap-3">
-                <div className="h-px w-8 bg-slate-800" /> Stack Base <div className="h-px w-8 bg-slate-800" />
+                <div className="h-px w-8 bg-slate-800" /> Initial State <div className="h-px w-8 bg-slate-800" />
               </span>
             </div>
           </div>
@@ -301,7 +301,7 @@ export default function UndoLog() {
 
                 <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 flex gap-3 text-[10px] text-slate-600 leading-relaxed italic">
                   <Info className="w-4 h-4 shrink-0 text-slate-700" />
-                  Demonstrates memory optimization by packing complex JS objects into fixed-length binary buffers for high-throughput messaging.
+                  Demonstrates state history management using React's useState & useReducer patterns — dispatching, committing and reverting state snapshots in a hook-based undo log.
                 </div>
               </div>
             ) : (
@@ -370,7 +370,7 @@ export default function UndoLog() {
                   </td>
                 </tr>
               )) : (
-                <tr><td colSpan="7" className="py-20 text-center text-slate-600 font-bold uppercase tracking-[0.2em] italic opacity-40">Persistence Layer Empty</td></tr>
+                <tr><td colSpan="7" className="py-20 text-center text-slate-600 font-bold uppercase tracking-[0.2em] italic opacity-40">No state dispatches recorded yet</td></tr>
               )}
             </tbody>
           </table>

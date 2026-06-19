@@ -12,8 +12,8 @@ import {
 const navItems = [
   { path: '/',         label: 'Dashboard',        icon: LayoutDashboard, badge: null },
   { path: '/wallets',  label: 'Wallet Tracker',   icon: Wallet,          badge: null },
-  { path: '/undo-log', label: 'Undo Log',          icon: History,         badge: 'LIFO' },
-  { path: '/queue',    label: 'Settlement Queue',  icon: ArrowUpDown,     badge: 'FIFO' },
+  { path: '/undo-log', label: 'Undo Log',          icon: History,         badge: 'Hooks' },
+  { path: '/queue',    label: 'Settlement Queue',  icon: ArrowUpDown,     badge: 'Context' },
   { path: '/checker',  label: 'Account Checker',   icon: UserCheck,       badge: null },
   { path: '/sorter',   label: 'Trade Sorter',      icon: SlidersHorizontal,badge: null },
   { path: '/price-hub',label: 'Price Hub',         icon: RefreshCw,       badge: 'LIVE' },

@@ -140,7 +140,7 @@ export default function SettlementQueue() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-3xl font-display font-black text-white tracking-tight">Settlement Clearing House</h2>
-          <p className="text-slate-500 font-medium mt-1 uppercase text-[10px] tracking-[0.2em]">Automated FIFO Transaction Pipeline</p>
+          <p className="text-slate-500 font-medium mt-1 uppercase text-[10px] tracking-[0.2em]">React Context-Driven Trade Pipeline</p>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex flex-col items-end">
@@ -159,7 +159,7 @@ export default function SettlementQueue() {
           <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
             <Play className="w-24 h-24 text-emerald-500" />
           </div>
-          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] block mb-3">Head Node (FIFO)</span>
+          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] block mb-3">Current State (useState)</span>
           {frontTrade ? (
             <div className="space-y-2">
               <div className="flex items-center gap-2">
@@ -173,7 +173,7 @@ export default function SettlementQueue() {
               </div>
             </div>
           ) : (
-            <div className="text-sm font-bold text-slate-700 py-4 uppercase tracking-widest">Buffer Empty</div>
+            <div className="text-sm font-bold text-slate-700 py-4 uppercase tracking-widest">No State Queued</div>
           )}
         </div>
 
@@ -181,7 +181,7 @@ export default function SettlementQueue() {
           <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
             <Database className="w-24 h-24 text-indigo-500" />
           </div>
-          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] block mb-3">Rear Inlet</span>
+          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] block mb-3">Pending Update (useEffect)</span>
           {rearTrade ? (
             <div className="space-y-2">
               <div className="flex items-center gap-2">
@@ -195,12 +195,12 @@ export default function SettlementQueue() {
               </div>
             </div>
           ) : (
-            <div className="text-sm font-bold text-slate-700 py-4 uppercase tracking-widest">Null Entry</div>
+            <div className="text-sm font-bold text-slate-700 py-4 uppercase tracking-widest">No Pending Effects</div>
           )}
         </div>
 
         <div className="fin-card p-6 bg-slate-500/[0.02]">
-          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] block mb-3">Queue Capacity</span>
+          <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] block mb-3">Render Queue Depth</span>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-display font-black text-white">{queueLength}</span>
             <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Pending</span>
@@ -352,7 +352,7 @@ export default function SettlementQueue() {
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-white">Pipeline Visualization</h3>
-                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-0.5">FIFO Asynchronous State Tape</p>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-0.5">React Batched State Update Cycle</p>
                 </div>
               </div>
               <div className="flex gap-2">
@@ -376,10 +376,10 @@ export default function SettlementQueue() {
             <div className="bg-black/40 rounded-2xl border border-white/5 p-6 flex items-center justify-between gap-6 overflow-hidden relative min-h-[160px]">
               {/* Visual Indicators */}
               <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black/80 to-transparent z-10 flex items-center justify-center pointer-events-none">
-                <div className="rotate-90 text-[10px] font-black text-emerald-500/40 uppercase tracking-[0.5em] -translate-x-4">Settlement</div>
+                <div className="rotate-90 text-[10px] font-black text-emerald-500/40 uppercase tracking-[0.5em] -translate-x-4">Commit</div>
               </div>
               <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black/80 to-transparent z-10 flex items-center justify-center pointer-events-none">
-                <div className="rotate-90 text-[10px] font-black text-indigo-500/40 uppercase tracking-[0.5em] translate-x-4">Ingestion</div>
+                <div className="rotate-90 text-[10px] font-black text-indigo-500/40 uppercase tracking-[0.5em] translate-x-4">Dispatch</div>
               </div>
 
               <div className="flex-1 flex gap-4 overflow-x-auto no-scrollbar py-4 px-12">
@@ -417,7 +417,7 @@ export default function SettlementQueue() {
                       <div className="w-12 h-12 rounded-full border-2 border-dashed border-slate-800 flex items-center justify-center mb-2">
                         <ArrowRight className="w-6 h-6" />
                       </div>
-                      <p className="text-[10px] font-black uppercase tracking-[0.3em]">Buffer Ready for Ingest</p>
+                      <p className="text-[10px] font-black uppercase tracking-[0.3em]">Context Provider Ready</p>
                     </div>
                   )}
                 </AnimatePresence>
@@ -431,7 +431,7 @@ export default function SettlementQueue() {
                 <Database className="w-5 h-5 text-indigo-400" />
                 <h3 className="font-bold text-white">Clearing Ledger</h3>
               </div>
-              <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] font-mono">Pipe: 0xSETTLE_FIFO</div>
+              <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] font-mono">Context: useTradeContext()</div>
             </div>
             <div className="overflow-x-auto">
               <table className="fin-table">
@@ -457,7 +457,7 @@ export default function SettlementQueue() {
                             {idx === 0 && <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />}
                           </div>
                         </td>
-                        <td className="font-mono text-slate-500 text-[10px]">FIX-{trade.id.toString(16).toUpperCase()}</td>
+                        <td className="font-mono text-slate-500 text-[10px]">TXN-{trade.id.toString(16).toUpperCase()}</td>
                         <td className="font-mono text-slate-500 text-[10px]">0x{trade.walletAddress.substring(0, 8)}</td>
                         <td>
                           <span className={`text-[9px] font-black uppercase tracking-widest ${trade.type === 'BUY' ? 'text-emerald-400' : 'text-rose-400'}`}>
@@ -472,7 +472,7 @@ export default function SettlementQueue() {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="8" className="py-20 text-center text-slate-700 font-black uppercase tracking-[0.3em] italic">FIFO pipeline at zero throughput</td>
+                      <td colSpan="8" className="py-20 text-center text-slate-700 font-black uppercase tracking-[0.3em] italic">React context provider has no pending state</td>
                     </tr>
                   )}
                 </tbody>

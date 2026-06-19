@@ -30,7 +30,7 @@ export class Stack {
   }
 
   toArray() {
-    // Returns elements from top to bottom (LIFO visual representation)
+    // Returns elements from top to bottom (most recent state first — React history order)
     return [...this.items].reverse();
   }
   
